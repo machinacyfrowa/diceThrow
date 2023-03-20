@@ -20,17 +20,17 @@ do
     {
         case '1':
             //przypadek jeśli użytkownik wybierze 1
-            randomThrow = rng.Next(1, 3);
+            randomThrow = rng.Next(1, 4);
             Console.WriteLine("Rzut kością K3: " + randomThrow.ToString());
             break;
         case '2':
             //przypadek jeśli wybierze 2
-            randomThrow = rng.Next(1, 4);
+            randomThrow = rng.Next(1, 5);
             Console.WriteLine("Rzut kością K4: " + randomThrow.ToString());
             break;
         case '3':
             //przypadek jeśli 3
-            randomThrow = rng.Next(1, 6);
+            randomThrow = rng.Next(1, 7);
             Console.WriteLine("Rzut kością K6: " + randomThrow.ToString());
             break;
         case 'q':
@@ -39,5 +39,7 @@ do
             Console.WriteLine("Podałeś złą opcję!");
             break;
     }
+    //pusta linia - separator
+    Console.WriteLine();
 }
 while (choice != 'q');
