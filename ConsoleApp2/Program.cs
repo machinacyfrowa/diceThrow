@@ -3,7 +3,7 @@
 Random rng = new Random();
 //prygotuj zmienną na wynik rzutu
 int randomThrow = 0;
-string choice = "";
+char choice;
 do
 {
     Console.WriteLine("Podaj jaką kością chcesz rzucić:");
@@ -11,30 +11,33 @@ do
     Console.WriteLine("2. K4");
     Console.WriteLine("3. K6");
     Console.WriteLine("q. Wyjście");
-    choice = Console.ReadLine();
+    Console.Write("Wybrna opcja: ");
+    choice = Console.ReadKey().KeyChar;
+    //pusta linia - separator
+    Console.WriteLine();
     //w zależności od wyboru użytkownika...
     switch (choice)
     {
-        case "1":
+        case '1':
             //przypadek jeśli użytkownik wybierze 1
             randomThrow = rng.Next(1, 3);
             Console.WriteLine("Rzut kością K3: " + randomThrow.ToString());
             break;
-        case "2":
+        case '2':
             //przypadek jeśli wybierze 2
             randomThrow = rng.Next(1, 4);
             Console.WriteLine("Rzut kością K4: " + randomThrow.ToString());
             break;
-        case "3":
+        case '3':
             //przypadek jeśli 3
             randomThrow = rng.Next(1, 6);
             Console.WriteLine("Rzut kością K6: " + randomThrow.ToString());
             break;
-        case "q":
+        case 'q':
             break;
         default:
             Console.WriteLine("Podałeś złą opcję!");
             break;
     }
 }
-while (choice != "q");
+while (choice != 'q');
